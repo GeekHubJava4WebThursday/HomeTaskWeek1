@@ -23,7 +23,7 @@ public class Numeral {
                 case 8: return "eight";
                 case 9: return "nine";
                 default:
-                    return "unknown numeral!";
+                    throw new IllegalArgumentException("Wrong numeral!");
             }
         }
         return "0";
