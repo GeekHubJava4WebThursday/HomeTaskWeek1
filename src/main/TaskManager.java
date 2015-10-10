@@ -1,5 +1,6 @@
 package main;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -35,41 +36,51 @@ public class TaskManager {
 
     private void processFactorial() {
         System.out.println("Input n: ");
-        int number = scanner.nextInt();
-        long result = 0;
-        showFactorialMenu();
         if (scanner.hasNextInt()) {
-            switch (scanner.nextInt()) {
-                case 1:
-                    result = Factorial.getFactorial(number);
-                    break;
-                case 2:
-                    result = Factorial.getFactorialRecursive(number);
-                    break;
-                default:
-                    result = Factorial.getFactorial(number);
+            int number = scanner.nextInt();
+            long result = 0;
+            showFactorialMenu();
+            if (scanner.hasNextInt()) {
+                switch (scanner.nextInt()) {
+                    case 1:
+                        result = Factorial.getFactorial(number);
+                        break;
+                    case 2:
+                        result = Factorial.getFactorialRecursive(number);
+                        break;
+                    default:
+                        result = Factorial.getFactorial(number);
+                }
             }
+            if (result > 0) {
+                System.out.println("Factorial of " + number + ": " + result);
+            }
+        } else {
+            throw new InputMismatchException("Not numeral!");
         }
-        if (result > 0) {
-            System.out.println("Factorial of " + number + ": " + result);
-        }
-        // System.out.println("Please, input 1 or 2!");
     }
 
 
     private void processFibonacci() {
         System.out.println("Input n: ");
-        int number = scanner.nextInt();
-        String result = new Fibonacci(number).toString();
-        System.out.println("Fibonacci Sequence of " + number + ": " + result);
+        if (scanner.hasNextInt()) {
+            int number = scanner.nextInt();
+            String result = new Fibonacci(number).toString();
+            System.out.println("Fibonacci Sequence of " + number + ": " + result);
+        } else {
+            throw new InputMismatchException("Not numeral!");
+        }
     }
 
 
     private void processNumeral() {
         System.out.println("Input numeral (0..9): ");
-        byte numeral = scanner.nextByte();
-        String verbal = Numeral.toVerbal(numeral);
-        if (!verbal.equalsIgnoreCase("0")) System.out.println("Verbal form of " + numeral + ": " + verbal);
+        if (scanner.hasNextByte()) {
+            byte numeral = scanner.nextByte();
+            System.out.println("Verbal form of " + numeral + ": " + Numeral.toVerbal(numeral));
+        } else {
+            throw new InputMismatchException("Not numeral!");
+        }
     }
 
     private void runTaskManager() {
