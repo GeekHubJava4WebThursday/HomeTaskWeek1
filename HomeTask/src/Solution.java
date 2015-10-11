@@ -82,6 +82,6 @@ public class Solution {
         }
 
         Factorial factorial = new Factorial(numberToCalculate);
-        System.out.println(factorial.calculate());
+        factorial.calculate();
     }
 }

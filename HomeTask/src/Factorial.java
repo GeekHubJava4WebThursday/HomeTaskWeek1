@@ -6,11 +6,11 @@ public class Factorial {
         this.numberToCalculate = numberToCalculate;
     }
 
-    public long calculate() {
+    public void calculate() {
         long result = 1;
         for (int i = 1; i <= numberToCalculate; i++) {
             result *= i;
         }
-        return result;
+        System.out.println(result);
     }
 }

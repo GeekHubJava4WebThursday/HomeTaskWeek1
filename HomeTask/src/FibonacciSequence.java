@@ -8,6 +8,7 @@ public class FibonacciSequence {
     public FibonacciSequence(int numberOfTerms) {
         this.numberOfTerms = numberOfTerms;
     }
+
     public void displaySequence() {
         sequence.add((long) 0);
         sequence.add((long) 1);
