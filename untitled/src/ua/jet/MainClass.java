@@ -17,7 +17,7 @@ public class MainClass {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             return bufferedReader.readLine();
         }catch (Exception e){
-            return "Wrong value!!!";
+            return "Wrong value!!!!";
         }
     }
 
