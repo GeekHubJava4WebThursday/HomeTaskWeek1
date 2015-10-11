@@ -7,6 +7,7 @@ public class VerbalNumber
     final String[] str11 = {"", "eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"};
     final String[] str10 = {"", "ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
     final String[] unit = {"thousands", "million", "billion", "trillion"};
+    final String pref = "negative";
 
     protected String getS1(int n) {
         return str1[n];
@@ -64,6 +65,11 @@ public class VerbalNumber
         String str = "";
         if (num.longValue() == 0)
             str = getS1(0);
+
+        if (num.longValue() < 0) {
+            num = - num.longValue();
+            str = pref;
+        }
 
         while (num.longValue() > 0) {
             String triad = triadToString((int)(num.longValue() % 1000));

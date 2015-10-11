@@ -115,7 +115,11 @@ public class ConsoleApp
         while (true) {
             drawLines();
             print("Choose: ");
-            commands.get(read() - 1).run();
+            int index = read() - 1;
+            if (index > 0 && index < commands.size())
+                commands.get(index).run();
+            else
+                printLn("Command not found!");
         }
     }
 
