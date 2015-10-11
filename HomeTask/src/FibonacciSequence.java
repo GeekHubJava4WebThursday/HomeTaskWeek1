@@ -15,7 +15,7 @@ public class FibonacciSequence {
             sequence.add(sequence.get(i - 1) + sequence.get(i - 2));
         }
         for (Long term : sequence) {
-            System.out.println(term + " ");
+            System.out.print(term + " ");
         }
     }
 }

@@ -50,7 +50,7 @@ public class Solution {
         }
 
         DigitToStringConverter converter = new DigitToStringConverter(digitToConvert);
-        System.out.println(converter.convert());
+        converter.convert();
     }
 
     private static void displayFibonacciSequence() throws IOException {

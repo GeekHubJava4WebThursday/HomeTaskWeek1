@@ -1,36 +1,18 @@
 
 public class DigitToStringConverter {
     private byte digit = 0;
+    private String[] words = {"zero", "one", "two", "three", "four",
+                                "five", "six", "seven", "eight", "nine"};
 
     public DigitToStringConverter(byte digit) {
         this.digit = digit;
     }
 
-    public String convert() {
-        switch (digit) {
-            case 0:
-                return "zero";
-            case 1:
-                return "one";
-            case 2:
-                return "two";
-            case 3:
-                return "three";
-            case 4:
-                return "four";
-            case 5:
-                return "five";
-            case 6:
-                return "six";
-            case 7:
-                return "seven";
-            case 8:
-                return "eight";
-            case 9:
-                return "nine";
-            default:
-                throw new IllegalArgumentException("Digit must be between 0 and 9");
-
+    public void convert() {
+        try{
+            System.out.println(words[digit]);
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Digit must be between 0 and 9");
         }
     }
 }
