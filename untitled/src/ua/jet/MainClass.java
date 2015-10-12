@@ -72,7 +72,7 @@ public class MainClass {
 
     }
 
-    public static void main(String[] args ) {
+    public static void main(String[] args){
 
         try {
             Integer numeralFromScreen = Integer.parseInt(screenReader("Choose :\n1.Factorial\n2.Sequence of Fibonachi\n3.Write a word for your numeral"));
@@ -81,14 +81,14 @@ public class MainClass {
                         break;
                 case 2: sequenceFibonachi(Integer.parseInt(screenReader("How many numbers from sequence you want to see?")));
                         break;
-                case 3: numberWordConverter(Integer.parseInt(screenReader("Enter your numeral :")));
+                case 3: numberWordConverter(Integer.parseInt(screenReader("Enter your numeral:")));
                         break;
                 default:
                     System.out.println("wrong value!!!");
             }
 
         }catch (Exception e){
-            System.out.println("Wrong value     \n"+ e.toString());
+            System.out.println("Wrong value\n"+ e.toString());
         }
 
     }
