@@ -4,10 +4,9 @@
 public class Numerals {
 
     private enum numerals {Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine};
-
     /**
-     * @param num
-     * @return
+     * @param num numeral that convert in the text
+     * @return numeral as text
      */
     public static String  getWord(int num) {
         switch (num){
