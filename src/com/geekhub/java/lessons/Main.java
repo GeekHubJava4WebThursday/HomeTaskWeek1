@@ -15,40 +15,42 @@ public class Main {
         boolean run = true;
         while (run) {
             printMenu();
-            menuItem = in.nextInt();
+            if (in.hasNextInt()) {
+                menuItem = in.nextInt();
 
-            switch (menuItem) {
-                case 1:
-                    CalculatorFactorial calculatorFactorial = new CalculatorFactorial();
-                    try {
+                switch (menuItem) {
+                    case 1:
+                        CalculatorFactorial calculatorFactorial = new CalculatorFactorial();
+                        try {
+                            System.out.println("input n:");
+                            n = in.nextInt();
+                            System.out.println(n + "! = " + calculatorFactorial.getFactorial(n));
+                        } catch (FactorialOfNegativeNumberException e) {
+                            System.out.println("error: factorial of negative number");
+                        }
+                        break;
+                    case 2:
                         System.out.println("input n:");
                         n = in.nextInt();
-                        System.out.println(n + "! = " + calculatorFactorial.getFactorial(n));
-                    } catch (FactorialOfNegativeNumberException e) {
-                        System.out.println("error: factorial of negative number");
-                    }
-                    break;
-                case 2:
-                    System.out.println("input n:");
-                    n = in.nextInt();
-                    CalculatorFibonacci calculatorFibonacci = new CalculatorFibonacci();
-                    int [] sequenceFib = calculatorFibonacci.getFibonacci(n);
-                    System.out.println("sequence "+ n +" number(s) fibonacci:");
-                    System.out.println(Arrays.toString(sequenceFib));
-                    break;
-                case 3:
-                    System.out.println("input number:");
-                    n = in.nextInt();
-                    NumberToWord memberToWord = new NumberToWord();
-                    try {
-                        System.out.println(n + " converted to " +memberToWord.toWord(n));
-                    } catch (NotNumberException e) {
-                        System.out.println("value is not number");
-                    }
-                    break;
-                default:
-                    run = false;
-            }
+                        CalculatorFibonacci calculatorFibonacci = new CalculatorFibonacci();
+                        int[] sequenceFib = calculatorFibonacci.getFibonacci(n);
+                        System.out.println("sequence " + n + " number(s) fibonacci:");
+                        System.out.println(Arrays.toString(sequenceFib));
+                        break;
+                    case 3:
+                        System.out.println("input number:");
+                        n = in.nextInt();
+                        NumberToWord memberToWord = new NumberToWord();
+                        try {
+                            System.out.println(n + " converted to " + memberToWord.toWord(n));
+                        } catch (NotNumberException e) {
+                            System.out.println("value is not number");
+                        }
+                        break;
+                    default:
+                        run = false;
+                }
+            } else run = false;
         }
     }
 
@@ -57,7 +59,7 @@ public class Main {
         System.out.println("1 - calculate factorial");
         System.out.println("2 - calculate fibonacci");
         System.out.println("3 - number to word convert");
-        System.out.println("any other number - exit");
+        System.out.println("any other symbol - exit");
         System.out.println("===============");
         System.out.println("select menu item:");
     }
