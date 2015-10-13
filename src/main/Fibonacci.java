@@ -9,13 +9,13 @@ public class Fibonacci {
 
     public Fibonacci(int quantity) {
         sequence = new int[quantity];
-        getFibonacciSequence();
+        initFibonacciSequence();
     }
 
     /**
-     *  Calculate Fibonacci sequence
+     *  Fibonacci sequence initialization
      */
-    private void getFibonacciSequence() {
+    private void initFibonacciSequence() {
         sequence[0] = 0;
         sequence[1] = 1;
         for (int i = 2; i < sequence.length; i++) {
