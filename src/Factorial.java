@@ -1,8 +1,13 @@
 /**
- * Created by Andrey Harkusha on 13.10.15.
+ *  This class calculates factorial of the number.
  */
 public class Factorial {
 
+    /**
+     *  Not recursive method to calculates the factorial.
+     *  @param num - The number for calculates factorial.
+     *  @return factorialResult - Factorial for this number.
+     */
     public static int factorialUnRecursive(long num) {
         int factorialResult=1;
 
@@ -11,6 +16,11 @@ public class Factorial {
         return factorialResult;
     }
 
+    /**
+     *  Recursive method to calculates the factorial.
+     *  @param num - The number for calculates factorial.
+     *  @return Factorial for this number.
+     */
     public static int factorialRecursive(int num) {
           return (num == 0) ? 1 : num * factorialRecursive(num - 1);
     }

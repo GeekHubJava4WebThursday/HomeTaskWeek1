@@ -1,8 +1,12 @@
 /**
- * Created by Admin on 15.10.15.
+ *  This class calculates the number of the Fibonacci row.
  */
 public class FibonacciRow {
 
+    /**
+     *  @param num - The number is less than that calculates Fibonacci row.
+     *  @return fibonacciResult - String with Fibonacci row.
+     */
     public static String fibonacciRow(int num) {
         String fibonacciResult = "";
         int fibonacciNumber = 0;
