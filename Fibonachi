@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Fibonachi{
+    public static void main (String args[])
+    {
+        Scanner scanner = new Scanner (System.in);
+        int numb = scanner.nextInt();
+        int firsNumber = 1, secondNumber = 1;
+
+        System.out.print(firsNumber + "" + secondNumber);
+
+        for (int i = 2; i<numb; i++)
+        {
+            int sum;
+            sum = firsNumber + secondNumber;
+            firsNumber = secondNumber;
+            secondNumber = sum;
+            System.out.print("" + sum);
+        }
+    }
+}
