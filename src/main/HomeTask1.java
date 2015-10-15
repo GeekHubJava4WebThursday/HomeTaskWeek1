@@ -7,6 +7,6 @@ package main;
 
 public class HomeTask1 {
     public static void main(String[] args) {
-        new TaskManager();
+        (new TaskManager()).run();
     }
 }

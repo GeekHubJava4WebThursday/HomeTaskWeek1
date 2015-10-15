@@ -16,7 +16,6 @@ public class TaskManager {
 
     public TaskManager() {
         this.scanner = new Scanner(System.in);
-        runTaskManager();
     }
 
     private void showMainMenu(){
@@ -83,7 +82,7 @@ public class TaskManager {
         }
     }
 
-    private void runTaskManager() {
+    public void run() {
         showMainMenu();
         while (scanner.hasNextInt()) {
             switch (scanner.nextInt()) {
